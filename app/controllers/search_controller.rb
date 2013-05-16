@@ -6,6 +6,5 @@ class SearchController < ApplicationController
   end
 
   def get_friend
-    binding.pry
   end
 end

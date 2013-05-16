@@ -69,10 +69,12 @@ class User < ActiveRecord::Base
     @results = facebook.fql_multiquery({"friends" => 'SELECT uid2 FROM friend WHERE uid1=me()', "mutual" => "SELECT name, pic_square, mutual_friend_count, uid FROM user WHERE uid IN( select uid2 from #friends ) order by mutual_friend_count desc limit 50", "college" => "SELECT name, pic_square, uid FROM user WHERE uid in ( select uid2 from #friends ) and '" + college.to_s + "' in education", "grad school" => "SELECT name, pic_square, uid FROM user WHERE uid in ( select uid2 from #friends ) and '" + grad_school.to_s + "' in education", "high school" => "SELECT name, pic_square, uid FROM user WHERE uid in ( select uid2 from #friends ) and '" + high_school.to_s + "' in education", "friends_list" => 'SELECT name, pic_square FROM user WHERE uid IN(select uid2 from #friends)' })
   end
 
-  private
-
   def school(type)
-    facebook.get_object('me')['education'].select{|x| x['type']==(type)}.first['school']['name']
+    if self.facebook.get_object('me')['education'].select{|x| x['type']==(type)}.first
+      facebook.get_object('me')['education'].select{|x| x['type']==(type)}.first['school']['name']
+    else
+      nil
+    end
   end
 
 end
