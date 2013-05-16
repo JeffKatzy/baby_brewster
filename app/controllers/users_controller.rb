@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout 'application'
   def index
     @query_results = @current_user.get_relevant_friends(@current_user.college, @current_user.grad_school, @current_user.high_school)
     @top_cities = @current_user.friends_by_location

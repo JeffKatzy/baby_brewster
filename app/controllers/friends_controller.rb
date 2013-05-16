@@ -1,4 +1,5 @@
 class FriendsController < ApplicationController
+  layout 'application'
   def search
     @results = @current_user.search(params['search'])
     @keys = @results.keys
