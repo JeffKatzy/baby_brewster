@@ -70,8 +70,12 @@ class User < ActiveRecord::Base
   end
 
   def school(type)
-    if self.facebook.get_object('me')['education'].select{|x| x['type']==(type)}.first
-      facebook.get_object('me')['education'].select{|x| x['type']==(type)}.first['school']['name']
+    if facebook.get_object('me')['education'].present?
+      if facebook.get_object('me')['education'].select{|x| x['type']==(type)}.try(:first)
+        facebook.get_object('me')['education'].select{|x| x['type']==(type)}.first['school']['name']
+      else
+        nil
+      end
     else
       nil
     end
