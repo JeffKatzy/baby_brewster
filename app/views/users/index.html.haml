@@ -1,0 +1,45 @@
+= render :partial => 'layouts/nav'
+.container
+  #home
+    #search.row.collapse
+      = form_tag(search_friends_path, :method => 'get') do
+        .ten.columns= text_field_tag :search, nil, :autofocus => true, :placeholder => 'type here to search people'
+        .two.columns= submit_tag "Search", :remote => true, class: "button expand postfix"
+    .lists
+      #city.list
+        = link_to @top_city, city_user_path(@current_user), :remote => true
+        %table
+          %tr
+            - @top_city_friends.each do |friend|
+              %td
+                = image_tag(friend['pic_square'])
+      #mutual.list
+        = link_to 'Mutual Friends', mutual_user_path(@current_user), :remote => true
+        %table
+          %tr
+            - @friends_by_mutual.each do |friend|
+              %td
+                = image_tag(friend['pic_square'])
+      - if @college_friends.present?
+        #school.list
+          = link_to 'College Friends', college_user_path(@current_user), :remote => true
+          %table
+            %tr
+              - @college_friends.each do |friend|
+                %td
+                  = image_tag(friend['pic_square'])
+      - if @grad_school_friends.present?
+        #other_school.list
+          = link_to 'Grad School Friends', grad_school_user_path(@current_user), :remote => true
+          %table
+            %tr
+              - @grad_school_friends.each do |friend|
+                %td
+                  = image_tag(friend['pic_square'])
+      #everyone.list
+        = link_to 'Everyone', friends_user_path(@current_user), :remote => true
+        %table
+          %tr
+            - @friends.each do |friend|
+              %td
+                = image_tag(friend['pic_square'])

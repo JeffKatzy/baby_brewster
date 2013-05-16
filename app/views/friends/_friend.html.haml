@@ -1,0 +1,11 @@
+#show_friend
+  .container
+    .friend
+      = link_to_function 'Go Back', 'app.return_list()', class: 'button radius'
+      %h1= @friend['name']
+      = image_tag @picture
+      - if @friend['education']
+        - @friend['education'].each do |school|
+          %p
+            = school['school']['name']
+

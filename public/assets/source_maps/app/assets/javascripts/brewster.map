@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/brewster.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;CAAA,CAAA,CAAA,GAAM;CACJ,CAAS,CAAA,CAAT,GAAA,EAAS;CACP,KAAA,IAAA;CACA,GAAA,GAAA,MAAA;CAFF,IAAS;CAAT,CAGa,CAAA,CAAb,KAAa,EAAb;CACE,KAAA,QAAA;CACA,GAAA,MAAA,GAAA;CALF,IAGa;CAJf,GAAA;CAAA"
+}

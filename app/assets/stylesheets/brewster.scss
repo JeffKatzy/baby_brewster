@@ -1,0 +1,86 @@
+#showcase {
+  position: relative;
+  height: 422px;
+  width: 100%;
+  background: #2a2a2a url('https://www.brewster.com/assets/landing/faces-e8361b531f79f243626e05fff1bc1fad.jpg');
+  margin: 0px;
+}
+
+#sign_in_btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 20px;
+    z-index: 1
+}
+
+body {
+  font-family: "Lato";
+  font-weight: bold;
+}
+
+#showcase h1, h2, h3 {
+    color: white;
+    font-family: "Lato";
+    text-align: center;
+}
+
+#content h1, #content h2, #content h3 {
+    color: #5a5a5a;
+    font-family: "Lato";
+    text-align: center;
+    padding-top: 30px;
+}
+
+.lists a{
+  color: #5a5a5a;
+  font-weight: bold;
+  padding-left: 8px;
+}
+
+table {
+  border: none;
+}
+
+.list {
+    border-bottom: 1px solid #5a5a5a;
+    margin-top: 10px;
+}
+
+.container {
+  width: 50%;
+  margin: auto;
+  padding-top: 20px;
+  font: "lato";
+  font-weight: bold
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a img {
+  height: 150px;
+  width: 150px;
+}
+
+.friend p {
+  font: "lato";
+  font-weight: bold;
+}
+
+h1{
+  font: "lato";
+  font-weight: bold;
+}
+
+.friend img {
+  width: 40%;
+  height: 40%;
+}
+
+#sign_out{
+  padding: 10px;
+  margin: 10px;
+}

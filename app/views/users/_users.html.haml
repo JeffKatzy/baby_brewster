@@ -1,0 +1,6 @@
+%table
+  - friends_list.in_groups_of(4, false) do |friends|
+    %tr
+      - friends.each do |friend|
+        %td
+          = link_to(image_tag(friend['pic_square']), "/friends/#{friend['uid']}", remote: true)

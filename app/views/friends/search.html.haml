@@ -1,0 +1,7 @@
+.results
+  .container
+    = link_to 'Go Back', users_path, class: 'button radius'
+    - @keys.each do |key|
+      .content
+        = key
+        = render(:partial => 'users/users', :locals => {:friends_list => @results[key]})

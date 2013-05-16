@@ -1,0 +1,5 @@
+.results
+  = link_to_function 'Go Back', 'app.go_back()', class: 'button radius'
+  #title= @title
+  .content
+    = render(:partial => 'users/users', :locals => {:friends_list => @friends})

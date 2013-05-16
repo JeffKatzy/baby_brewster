@@ -1,0 +1,5 @@
+#user_nav
+  - if current_user
+    = link_to "Sign out #{current_user.name}", signout_path, id: 'sign_out', class: 'button radius alert'
+  - else
+    = link_to 'Connect with facebook', '/auth/facebook', id: 'sign_in_btn', class: 'button radius'
